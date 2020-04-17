@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.fab {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  border-radius: 50px;
+  width: 60px;
+  height: 60px;
+  background: #129cbe;
+  box-shadow: 1px 2px 4px black;
+  z-index: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fab:hover {
+  cursor: pointer;
+}
+
+i {
+  padding: 6px;
+}
+
+.faq{
+  width: 250px;
+  height: 430px;
+  float: right;
+  margin-right: 2em;
+  margin-top: 12.6em;
+  box-shadow: 1px 2px 4px black;
+  border-radius: 5px;
+}
+
+.news{
+  width: 250px;
+  height: 345px;
+  border-radius: 0 0 5px 5px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.chatbot{
+  width: 250px;
+  height: 397px;
+  float: right;
+  margin-top: 0.1em;
+  border-radius: 0 0 5px 5px;
+}
+
+.topo{
+  height: 110px;
+  background: #129cbe;
+  border-radius: 5px 5px 0 0;
+}
+
+/*.topo_chatbot{
+  width: 250px;
+  height: 40px;
+  float: right;
+  background: #129cbe;
+  border-radius: 5px 5px 0 0;
+}*/
+
+.mensagem{
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.box{
+  height: 250px;
+  width: 200px;
+  margin-left: 1.5em;
+}
+
+.item{
+  width: auto;
+  height: 20px;
+  border-radius: 50px;
+  background: #129cbe;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  box-shadow: 1px 2px 4px black;
+  margin-top: 1.5em;
+}
+
+.item:hover{
+  cursor: pointer;
+}
+
+.fa-window-minimize:hover{
+  cursor: pointer;
+}
+
+.bot{
+  float: right;
+}

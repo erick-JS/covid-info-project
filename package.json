@@ -1,0 +1,18 @@
+{
+  "name": "covid_app",
+  "version": "1.0.0",
+  "description": "A website about COVID-19 cases, including a FAQ chatbot.",
+  "main": "fake_news.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erick Silva",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "puppeteer": "^2.1.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5"
+  }
+}

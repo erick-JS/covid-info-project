@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>COVID-19 Monitor</title>
+</head>
+
+<body>
+    <div class="fab">
+        <i class="fas fa-virus" style="font-size:48px;color:white;"></i>
+    </div>
+
+    <div class="faq" id="box_fake">
+        <div class="topo" style="height: 85px;">
+            <i class="fas fa-window-minimize" style="font-size:20px;color:white;float:right;"></i>
+            <br><br>
+            <p class='mensagem'>
+                Digite a descrição do boato para confirmar se é fake news.
+            </p>
+        </div>
+        <div class="news" id="fake_list"></div>
+    </div>
+
+    <div id="box_news">
+        <div class="topo" style="height: 85px;">
+            <i class="fas fa-window-minimize" style="font-size:20px;color:white;float:right;"></i>
+            <br><br>
+            <p class='mensagem'>
+                Veja abaixo as últimas notícias sobre o COVID-19.
+            </p>
+        </div>
+        <div class="news" id="last_news"></div>
+    </div>
+
+    <div id="faq_box">
+        <iframe allow="microphone;" class="faq"
+            src="https://console.dialogflow.com/api-client/demo/embedded/cdecefe6-d25a-4cd2-9766-a2e36132cd2f">
+        </iframe>
+    </div>
+
+    <div class="faq" id="box">
+        <div class='topo'>
+            <i class="fas fa-window-minimize" id="minimize" style="font-size:20px;color:white;float:right;"></i>
+            <br><br>
+            <p class='mensagem'>
+                Olá. Sou o COVID FAQ. Clique em um dos botões abaixo
+                para que eu possa te ajudar.
+            </p>
+        </div>
+        <br>
+        <div class='box'>
+            <div class='item' id='duvidas'>Tenho dúvidas</div>
+            <div class='item' id="noticias">Últimas notícias</div>
+            <div class='item' id="fake_news">Fake news</div>
+            <div class='item' id="casos_confirmados">Casos confirmados</div>
+        </div>
+    </div>
+</body>
+
+<script src="js/chatbot.js"></script>
+<script src="js/news.js"></script>
+
+</html>
