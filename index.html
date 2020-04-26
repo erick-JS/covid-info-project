@@ -5,16 +5,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
+
+    <!--ícones-->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <title>COVID-19 Monitor</title>
+
+    <title>COVID-19 Dashboard</title>
 </head>
 
-<body>
+<body onload="getDataWorld(), getDataBrazil(), getDataCountries(), getDataStatesBrazil()">
+    <header>
+        COVID-19 Dashboard
+    </header>
+    <section>
+        <div class="casos" style="background: #125481;">
+            <div class="tag">
+                <br>
+                <h1>Mundo</h1>
+                <br>
+                <h3 class="collapsible">Ver detalhes</h3>
+            </div>
+            <div class="number">
+                <br>
+                <h1 id="recoveredWorld"></h1>
+                <h3>Curados</h3>
+            </div>
+            <div class="number">
+                <br>
+                <h1 id="deathsWorld"></h1>
+                <h3>Óbitos</h3>
+            </div>
+            <div class="number">
+                <br>
+                <h1 id="casesWorld"></h1>
+                <h3>Casos confirmados</h3>
+            </div>
+            <div class="content" style="background: #125481; margin-left: 0; margin-top: 0.5em;">
+                <table class="table-fixed" id="countries">
+                    <thead>
+                        <tr>
+                            <th>País/Região</th>
+                            <th>Casos confirmados</th>
+                            <th>Óbitos</th>
+                            <th>Curados</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <div class="casos" style="background: #043d0dbc;">
+            <div class="tag">
+                <br>
+                <h1>Brasil</h1>
+                <br>
+                <h3>Ver detalhes</h3>
+            </div>
+            <div class="number">
+                <br>
+                <h1 id="recoveredBrazil"></h1>
+                <h3>Curados</h3>
+            </div>
+            <div class="number">
+                <br>
+                <h1 id="deathsBrazil"></h1>
+                <h3>Óbitos</h3>
+            </div>
+            <div class="number">
+                <br>
+                <h1 id="casesBrazil"></h1>
+                <h3>Casos confirmados</h3>
+            </div>
+            <div class="content" style="background: #043d0dbc; margin-left: 0; margin-top: 0.5em;">
+                <table class="table-fixed" id="states">
+                    <thead>
+                        <tr>
+                            <th>Estado</th>
+                            <th>Casos confirmados</th>
+                            <th>Óbitos</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <div class="casos" style="background: #a1660cd7;">
+            <div class="tag">
+                <br>
+                <h1>Cidades</h1>
+                <br>
+                <h3>Ver detalhes</h3>
+            </div>
+            <div class="descricao">
+                <!--
+                    <br>
+                <h3>Clique em ver detalhes para consultar o número de casos em uma determinada cidade. Se o município
+                    digitado não estiver na tabela, significa que não há casos de COVID-19 na região.</h3>-->
+                <br><h3><label for="">Selecione um estado:</label></h3>
+                <select id="item">
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AP">AP</option>
+                    <option value="AM">AM</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MT">MT</option>
+                    <option value="MS">MS</option>
+                    <option value="MG">MG</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PR">PR</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RS">RS</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="SC">SC</option>
+                    <option value="SP">SP</option>
+                    <option value="SE">SE</option>
+                    <option value="TO">TO</option>
+                </select>
+                <input type="button" value="Consultar" id="btnconsultar">
+            </div>
+            <div class="content" style="background: #a1660cd7; margin-left: 0; margin-top: 0.5em;">
+                <table class="table-fixed" id="cities">
+                    <thead>
+                        <tr>
+                            <th>Cidade</th>
+                            <th>Estado</th>
+                            <th>Casos confirmados</th>
+                            <th>Óbitos</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </section>
     <div class="fab">
         <i class="fas fa-virus" style="font-size:48px;color:white;"></i>
     </div>
 
-    <div class="faq" id="box_fake">
+    <!--<div class="faq" id="box_fake">
         <div class="topo" style="height: 85px;">
             <i class="fas fa-window-minimize" style="font-size:20px;color:white;float:right;"></i>
             <br><br>
@@ -23,11 +157,11 @@
             </p>
         </div>
         <div class="news" id="fake_list"></div>
-    </div>
+    </div>-->
 
     <div id="box_news">
         <div class="topo" style="height: 85px;">
-            <i class="fas fa-window-minimize" style="font-size:20px;color:white;float:right;"></i>
+            <i class="fas fa-window-minimize" onclick="closeNews()" style="font-size:20px;color:white;float:right;"></i>
             <br><br>
             <p class='mensagem'>
                 Veja abaixo as últimas notícias sobre o COVID-19.
@@ -56,12 +190,20 @@
             <div class='item' id='duvidas'>Tenho dúvidas</div>
             <div class='item' id="noticias">Últimas notícias</div>
             <div class='item' id="fake_news">Fake news</div>
-            <div class='item' id="casos_confirmados">Casos confirmados</div>
         </div>
     </div>
-</body>
 
-<script src="js/chatbot.js"></script>
-<script src="js/news.js"></script>
+
+    <script src="js/chatbot.js"></script>
+    <script src="js/news.js"></script>
+    <script src="js/cases.js"></script>
+    <script src="js/collapsible.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#countries').Datatable();
+        });
+    </script>
+</body>
 
 </html>

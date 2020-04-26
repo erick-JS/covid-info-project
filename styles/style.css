@@ -5,6 +5,171 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+header {
+  width: auto;
+  padding: 2.5em;
+  background: #129cbe;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+section {
+  width: auto;
+  height: 28em;
+}
+
+.casos {
+  width: 80vw;
+  height: 60vh;
+  padding: 0.5em;
+  margin-left: 100px;
+  margin-top: 0.5em;
+  border-radius: 20px;
+}
+
+.tag {
+  width: 150px;
+  height: 100px;
+  margin-left: 0.5em;
+  border-right: solid 2px white;
+  display: inline-block;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.number {
+  width: 200px;
+  height: 100px;
+  margin-left: 0.5em;
+  border: solid 2px white;
+  border-radius: 20px;
+  display: inline-block;
+  float: right;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.content {
+  width: 80vw;
+  height: 40vh;
+  padding: 0.5em;
+  background: blue;
+  margin-left: 100px;
+  border-radius: 0 0 20px 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.descricao {
+  width: 620px;
+  height: 100px;
+  margin-left: 0.5em;
+  border: solid 2px white;
+  border-radius: 20px;
+  display: inline-block;
+  float: right;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.table-fixed {
+  width: 100%;
+  margin-bottom: 5em;
+  background: #fff;
+  text-align: center;
+}
+
+/*This will work on every browser but Chrome Browser*/
+.table-fixed thead {
+  position: relative;
+  /*position: -webkit-sticky;*/
+  top:0;
+  /*z-index: 1;*/
+  background-color: #129cbe;
+  color: #fff;
+}
+
+/*This will work on every browser*/
+.table-fixed thead th {
+  position: sticky;
+  position: -webkit-sticky;
+  height: 3em;
+  top: 0;
+  z-index: 999;
+  background-color: #129cbe;
+  color: #fff;
+}
+
+select{
+  width: 200px;
+  height: 30px;
+  background: #a1660cd7;
+  border: solid 2px #fff;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: bold;
+}
+
+input[type=button]{
+  background: #cf830fd7;
+  width: 100px;
+  height: 30px;
+  border: solid 2px #fff;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: bold;
+}
+
+input[type=button]:active{
+  background: #a1660cd7;
+}
+
+/*table {
+  *width: 790px;
+  text-align: center;
+  border: solid 3px white;
+  background: white;
+  table-layout: fixed;
+  box-sizing: border-box;
+  border-spacing: 0;
+  width: 100%;
+}
+
+td+td {
+  border-left: 1px solid #eee;
+}
+
+td,
+th {
+  border-bottom: 1px solid #eee;
+  background: #129cbe;
+  color: #ffffff;
+  padding: 10px 25px;
+}
+
+table td {
+  border: solid 3px white;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*table th {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: left;
+  background-color: #129cbe;
+  color: white;
+  text-align: center;
+  border: solid 3px 0 3px 0 white;
+}*/
+
 .fab {
   position: fixed;
   bottom: 32px;
@@ -29,17 +194,21 @@ i {
   padding: 6px;
 }
 
-.faq{
+.faq {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
   width: 250px;
   height: 430px;
   float: right;
-  margin-right: 2em;
-  margin-top: 12.6em;
   box-shadow: 1px 2px 4px black;
   border-radius: 5px;
+  z-index: flex;
+  flex-direction: column;
+  background: #ffffff;
 }
 
-.news{
+.news {
   width: 250px;
   height: 345px;
   border-radius: 0 0 5px 5px;
@@ -47,7 +216,7 @@ i {
   overflow-x: hidden;
 }
 
-.chatbot{
+.chatbot {
   width: 250px;
   height: 397px;
   float: right;
@@ -55,7 +224,7 @@ i {
   border-radius: 0 0 5px 5px;
 }
 
-.topo{
+.topo {
   height: 110px;
   background: #129cbe;
   border-radius: 5px 5px 0 0;
@@ -69,19 +238,19 @@ i {
   border-radius: 5px 5px 0 0;
 }*/
 
-.mensagem{
+.mensagem {
   color: white;
   text-align: center;
   font-weight: bold;
 }
 
-.box{
+.box {
   height: 250px;
   width: 200px;
   margin-left: 1.5em;
 }
 
-.item{
+.item {
   width: auto;
   height: 20px;
   border-radius: 50px;
@@ -93,14 +262,67 @@ i {
   margin-top: 1.5em;
 }
 
-.item:hover{
+.item:hover {
   cursor: pointer;
 }
 
-.fa-window-minimize:hover{
+.fa-window-minimize:hover {
   cursor: pointer;
 }
 
-.bot{
+.bot {
   float: right;
 }
+
+/*.container {
+  overflow-y: auto;
+  height: 200px;
+}
+
+th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/*th[scope=row] {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  z-index: 1;
+}
+
+th:not([scope=row]) {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/*th {
+  height: 0;
+  line-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: transparent;
+  border: none;
+  white-space: nowrap;
+}*/
+
+/*th div {
+  position: absolute;
+  background: transparent;
+  color: #fff;
+  padding: 9px 25px;
+  top: 0;
+  margin-left: -25px;
+  line-height: normal;
+  border-left: 1px solid #800;
+}
+
+th:first-child div {
+  border: none;
+  background: red;
+  position: fixed;
+}*/

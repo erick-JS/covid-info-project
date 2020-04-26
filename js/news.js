@@ -7,6 +7,7 @@ var minimize = document.getElementById("minimize")
 box_news.innerHTML = "";
 
 noticias.addEventListener("click", openNews);
+minimize.addEventListener("click", closeNews);
 
 function viewNews() {
     //URL onde está a API
@@ -67,7 +68,7 @@ function openNews() {
     viewNews();
 }
 
-function closeNews(){
+function closeNews() {
     box_news.innerHTML = "";
     faq_btn.style.visibility = "visible";
 }

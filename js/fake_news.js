@@ -1,16 +1,4 @@
-/*var faq_btn = document.querySelector(".fab");
-var fake_news = document.getElementById("fake_news");
-var box_fake = document.getElementById("box_fake");
-var covid_box = document.getElementById("box");
-var minimize = document.getElementById("minimize");
-var fake_list = document.getElementById("fake_list");
-
-box_fake.innerHTML = "";
-
-fake_news.addEventListener("click", openFakeNews);*/
-
 //Criação da API com base nos dados do Ministério da Saúde
-//function viewFakeNews() {
 
 var request = require('request');
 var cheerio = require('cheerio');
@@ -20,7 +8,6 @@ for (var i = 0; i <= 30; i += 10) {
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
             var items = [];
-            var content;
 
             $('.tileContent').each(function (i, element) {
                 var title = $(element).find('h2').text().trim();
@@ -34,9 +21,9 @@ for (var i = 0; i <= 30; i += 10) {
                     tag: tag,
                     link: link
                 }
-
+                
                 items.push(JSON.stringify(content));
-                //design(content.title, content.description);
+                exports = content.title;
             })
 
             $('.tileInfo > ul').each(function (i, element) {
@@ -48,19 +35,15 @@ for (var i = 0; i <= 30; i += 10) {
 
                 items.push(JSON.stringify(info))
             })
-
-            console.log(items);
         }
+
+        console.log(items);
     });
 }
-//}
 
-
-/*function design(title, description){
-    h1 = document.createAttribute('h1');
-    h1.textContent = title; 
-    //description = document.createAttribute('h4');
-
-    fake_list.appendChild(h1);
-    //fake_list.appendChild(description);
+/*export var obj = {
+    name: "Erick",
+    age: 19,
+    country: "Brasil",
+    job: "Programador"
 }*/
