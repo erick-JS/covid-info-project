@@ -87,8 +87,7 @@ function getDataAllCities() {
             if(data.results[i].place_type === "state"){
                 i++;
             }
-
-            console.log(data.results[i]);
+            
             cities.innerHTML += `<tbody><tr><td>${data.results[i].city}</td>` +
                 `<td>${data.results[i].state}</td>` +
                 `<td>${Number(data.results[i].confirmed).toLocaleString("pt-br")}</td>` +
